@@ -1,0 +1,169 @@
+{
+    "info": {
+      "_postman_id": "12345678-1234-1234-1234-123456789012",
+      "name": "Restaurant Ordering API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Client",
+        "item": [
+          {
+            "name": "Register Client",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"nom\": \"Laurent\",\n  \"email\": \"laurent@example.com\",\n  \"password\": \"monMotDePasse123\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000/api/clients/register",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "api",
+                  "clients",
+                  "register"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Client by ID",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:3000/api/clients/:id",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "api",
+                  "clients",
+                  ":id"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Restaurant",
+        "item": [
+          {
+            "name": "Add Restaurant",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"nom\": \"Le Gourmet\",\n  \"adresse\": \"123 Rue de Paris\",\n  \"codePostal\": \"75001\",\n  \"ville\": \"Paris\",\n  \"email\": \"contact@legourmet.com\",\n  \"password\": \"securePass123\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000/api/restaurants",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "api",
+                  "restaurants"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get All Restaurants",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:3000/api/restaurants",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "api",
+                  "restaurants"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Plat",
+        "item": [
+          {
+            "name": "Add Plat",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"nom\": \"Pizza Margherita\",\n  \"photo\": \"url_to_photo.jpg\",\n  \"prixUnitaire\": 12.5\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000/api/plats/:restaurantId",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "api",
+                  "plats",
+                  ":restaurantId"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Plats by Restaurant",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:3000/api/plats/:restaurantId",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "api",
+                  "plats",
+                  ":restaurantId"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
